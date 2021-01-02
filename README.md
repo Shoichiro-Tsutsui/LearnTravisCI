@@ -127,12 +127,10 @@ GitHub からクローンしたときと、パッケージを作成したとき�
     - この段階では、`docs stable`は404
 1. GitHubから、レポジトリをリリースする。Tag version として、例えば `v0.1.0` などとする。
 1. release すると、TravisCIでビルドされて、`docs stable` も見られるようになる。
+    - gh-pages ブランチを見ると、`v0.1.0` や `stable` といったディレクトリが作られている。`stable` は `v0.1.0` のシンボリックリンクになっている。
 
 
 ## トラブルシューティング
 - 上の設定でやると、レポジトリ名は `MyPkg.jl` である。
     - 対応するGitHubのアドレスは https://github.com/Shoichiro-Tsutsui/MyPkg.jl
-    - https://github.com/Shoichiro-Tsutsui/MyPkg でないことに注意
-- Settings -> GitHub Pages -> Source の設定を、 Branch: gh-pages, /docs にする。
-    - ここが不正だと fatal: 'upstream/gh-pages' is not a commit and a branch 'gh-pages' cannot be created from it 
-    
+    - https://github.com/Shoichiro-Tsutsui/MyPkg でないことに注意    
