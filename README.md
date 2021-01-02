@@ -117,3 +117,19 @@ GitHub からクローンしたときと、パッケージを作成したとき�
 1. TravisCI側の `LearnTravisCI` レポジトリの設定から、環境変数を追加する。(Settings -> Environment Variables)
   - NAME欄に DOCUMENTER_KEY と入力
   - VALUE欄に `create_deploy_key.jl` で作った2つ目の文字列を入力
+
+  
+## ビルド
+1. TravisCIのDashboardにレポジトリの一覧が見れる。Trigger a buildでビルドが実行される。
+1. もしくは、GitHubにpushすると、それがトリガーとなってビルドが実行される。
+1. 成功すれば、build passing状態となる。
+1. GitHubのレポジトリのREADME.mdに、`docs dev`というボタン（バッジという）が追加されている。ここをクリックすると、ドキュメントが表示される。
+    - この段階では、`docs stable`は404
+
+## トラブルシューティング
+- 上の設定でやると、レポジトリ名は `MyPkg.jl` である。
+    - 対応するGitHubのアドレスは https://github.com/Shoichiro-Tsutsui/MyPkg.jl
+    - https://github.com/Shoichiro-Tsutsui/MyPkg でないことに注意
+- Settings -> GitHub Pages -> Source の設定を、 Branch: gh-pages, /docs にする。
+    - ここが不正だと fatal: 'upstream/gh-pages' is not a commit and a branch 'gh-pages' cannot be created from it 
+    
